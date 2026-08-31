@@ -1,0 +1,36 @@
+# Keil MDK-ARM build output
+Objects/
+Listings/
+*.o
+*.obj
+*.d
+*.crf
+*.dep
+*.lnp
+*.lst
+*.map
+*.axf
+*.elf
+*.hex
+*.bin
+*.build_log.htm
+
+# Keil per-user settings
+*.uvguix.*
+*.uvgui.*
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.tmp
+*.bak
+*~
+
+# Archives and local exports
+*.zip
+*.7z
+*.rar
+

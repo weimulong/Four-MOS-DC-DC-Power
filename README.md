@@ -41,7 +41,7 @@
 .
 ├── firmware/
 │   ├── Core/                       # 应用代码与外设初始化
-│   ├── Drivers/                    # 工程所需的 CMSIS 与 STM32 HAL
+│   ├── Drivers/                    # STM32CubeF3 依赖安装说明
 │   └── MDK-ARM/                    # Keil 工程与启动文件
 ├── hardware/
 │   └── eda/                        # 原理图与 PCB 工程（.epro）
@@ -50,7 +50,7 @@
 └── THIRD_PARTY_NOTICES.md
 ```
 
-原压缩包内的 PDF 报告、规格书、编译结果、个人 IDE 配置以及未参与构建的 CMSIS 测试/示例组件未收录。
+原压缩包内的 PDF 报告、规格书、编译结果、个人 IDE 配置，以及可从官方 STM32CubeF3 获取的 CMSIS/HAL 厂商代码未收录。
 
 ## 固件代码导览
 
@@ -68,10 +68,11 @@
 ## 编译与烧录
 
 1. 安装支持 STM32F3 系列的 Keil MDK-ARM 和对应器件包。
-2. 打开 `firmware/MDK-ARM/Buck-Boost-Mode-VLoop-PID-BiDir.uvprojx`。
-3. 检查目标器件和编译器版本；原工程目标为 STM32F334x8 系列。
-4. 编译工程并通过 SWD 调试器下载。
-5. 首次上电请使用限流电源，并在确认互补 PWM、死区和采样信号正确后再连接功率级。
+2. 按照 `firmware/Drivers/README.md` 准备 STM32CubeF3 的 CMSIS/HAL 依赖。
+3. 打开 `firmware/MDK-ARM/Buck-Boost-Mode-VLoop-PID-BiDir.uvprojx`。
+4. 检查目标器件和编译器版本；原工程目标为 STM32F334x8 系列。
+5. 编译工程并通过 SWD 调试器下载。
+6. 首次上电请使用限流电源，并在确认互补 PWM、死区和采样信号正确后再连接功率级。
 
 本次整理只核对了工程引用文件是否齐全，未在 Keil 环境和实际硬件上重新编译或验证。
 
@@ -87,7 +88,7 @@
 
 ## 来源、版权与使用范围
 
-本仓库根据现有工程资料整理，部分代码、器件支持文件和设计内容可能来自原开发者或芯片厂商。仓库根目录未声明统一的开源许可证，也不表示对所有内容进行重新授权。STM32 HAL/CMSIS 文件仍受其原始许可条款约束，详见 `THIRD_PARTY_NOTICES.md` 及随附许可文件。
+本仓库根据现有工程资料整理，部分代码和设计内容可能来自原开发者。仓库根目录未声明统一的开源许可证，也不表示对所有内容进行重新授权。STM32 HAL/CMSIS 依赖需从 STMicroelectronics/Arm 的官方发行包取得，并受其原始许可条款约束，详见 `THIRD_PARTY_NOTICES.md`。
 
 在复制、修改、商业使用或重新发布前，请自行确认各部分的版权归属与许可条件。本仓库主要用于学习、研究和工程资料整理。
 
@@ -100,4 +101,3 @@
 - [ ] 在原版本 Keil 工具链中重新编译
 - [ ] 实机功能与保护测试
 - [ ] 效率、纹波和温升测试
-
