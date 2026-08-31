@@ -47,10 +47,9 @@
 ├── hardware/
 │   └── eda/                        # 原理图与 PCB 工程（.epro）
 │   └── schmeatics/                 # 原理图PDF
-│   └── README                      # 硬件电路原理简介F
+│   └── README                      # 硬件电路原理简介
 ├── .gitignore
 ├── README.md
-└── THIRD_PARTY_NOTICES.md
 ```
 
 原压缩包内的 PDF 报告、规格书、编译结果、个人 IDE 配置，以及可从官方 STM32CubeF3 获取的 CMSIS/HAL 厂商代码未收录。
