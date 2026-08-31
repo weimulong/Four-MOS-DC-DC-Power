@@ -46,6 +46,8 @@
 │   └── MDK-ARM/                    # Keil 工程与启动文件
 ├── hardware/
 │   └── eda/                        # 原理图与 PCB 工程（.epro）
+│   └── schmeatics/                 # 原理图PDF
+│   └── README                      # 硬件电路原理简介F
 ├── .gitignore
 ├── README.md
 └── THIRD_PARTY_NOTICES.md
