@@ -15,7 +15,7 @@
 ## 1. 四开关 Buck-Boost 功率级
 
 功率级由两组同步半桥、储能电感 L4（22 uH）以及输入/输出滤波电容组成。Q1、Q2 构成输入侧半桥，Q3、Q4 构成输出侧半桥，中间通过电感传递能量。
-
+<img width="653" height="245" alt="BUCK-BOOST拓扑图" src="https://github.com/user-attachments/assets/50276ead-e15c-4b33-aaff-f99fd7b3235b" />
 - 降压模式（Buck）：输入侧半桥进行 PWM 调制，输出侧主要承担同步续流。
 - 升压模式（Boost）：输出侧半桥进行 PWM 调制，输入侧主要承担同步导通。
 - 混合模式（Buck-Boost）：两侧半桥配合调制，用于输入与输出电压接近时的平滑过渡。
@@ -35,6 +35,7 @@
 辅助电源通过二极管从 `VIN+` 或 `VOUT+` 取电，随后由 XL7005A 降压得到约 12 V，再通过 AMS1117-5.0 和 AMS1117-3.3 产生 5 V 与 3.3 V。模拟 3.3 V 电源 `A3V3` 经过 LC 滤波，以降低数字和开关噪声对 ADC 基准及采样信号的影响。
 
 ## 4. 电压与电流采样
+<img width="499" height="283" alt="image" src="https://github.com/user-attachments/assets/9e2db5ad-db4f-4047-ba7e-d53927f6f175" />
 
 输入、输出电压均采用差分运算放大器采样。68 kΩ 输入电阻与 3.3 kΩ 反馈/基准电阻将高压差分信号按比例缩小，再经 100 Ω 与 330 pF RC 网络送入 `ADC_VIN` 和 `ADC_VOUT`。差分采样有助于减小功率地线上压降对测量结果的影响。
 
