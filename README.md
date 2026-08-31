@@ -8,6 +8,7 @@
 ## 项目概述
 
 功率级采用四开关同步 Buck-Boost 拓扑，可根据输入、输出电压关系工作于 Buck、Boost 或 Buck-Boost（混合）模式。STM32F334 使用 HRTIM 产生互补 PWM，通过 ADC 采集输入/输出电压与电流，并在定时中断中完成数字闭环控制和状态管理。
+<img width="653" height="245" alt="90b971d7-41df-410b-a70a-efe5eb92f29e" src="https://github.com/user-attachments/assets/c8fe5c8d-70c9-472d-bf77-0ba6c5097d39" />
 
 固件主要包含：
 
